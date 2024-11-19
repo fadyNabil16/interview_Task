@@ -12,28 +12,25 @@ export const LangProvider = ({ children }) => {
   const [lang, setLang] = React.useState(language);
 
   React.useLayoutEffect(() => {
-    if (lang.toLowerCase() == "ar") document.documentElement.dir = "rtl";
+    if (lang.toLowerCase() === "ar") document.documentElement.dir = "rtl";
     else document.documentElement.dir = "ltr";
     changeLanguage(language);
   }, []);
 
   const changeLang = (desLang) => {
-    desLang = desLang.toLowerCase();
     if (desLang === "ar") {
       setLang("ar");
       document.documentElement.dir = "rtl";
     }
     if (desLang === "en") {
-      setLang("ar");
+      setLang("en");
       document.documentElement.dir = "ltr";
     }
-    changeLanguage(lang);
   };
-  return (
-    <LangContext.Provider value={{ lang, changeLang }}>
-      {children}
-    </LangContext.Provider>
-  );
+
+  const value = { lang, changeLang };
+
+  return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 };
 
 export const useLang = () => React.useContext(LangContext);

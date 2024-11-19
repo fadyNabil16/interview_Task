@@ -1,6 +1,41 @@
 {
   "translation": {
-    "Hello": "مرحبا",
-    "Lang": "Ar"
+    "bosta": "بوسطة",
+    "main": "الرئيسية",
+    "prices": "الأسعار",
+    "support": "كلم المبيعات",
+    "trackpackage": "تتبع شحنتك",
+    "login": "تسجيل الدخول",
+    "lastupdate": "اخر تحديث",
+    "packagedetails": "تفاصيل الشحنة",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "promiseddate": "موعد التسليم خلال",
+    "packagenumber": "{{num}} رقم الشحنة",
+    "provider": "اسم التاجر",
+    "details": "تفاصيل",
+    "address": "عنوان التسليم",
+    "branch": "الفرع",
+    "Branch": {
+      "nasrcity": "مدينة نصر"
+    },
+    "PackageState": {
+      "TICKET_CREATED": "تم إنشاء الشحنة",
+      "PACKAGE_RECEIVED": "تم إستلام الشحنة من التاجر",
+      "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
+      "DELIVERED": "تم التسليم",
+      "NOT_YET_SHIPPED": ""
+    },
+    "Days": {
+      "sunday": "الاحد",
+      "monday": "الاثنين",
+      "tuesday": "الثلاثاء",
+      "wednesday": "الاربعاء",
+      "thursday": "الخميس",
+      "friday": "الجمعة",
+      "saturday": "السبت"
+    },
+    "devaddress": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 22 , cairo",
+    "lang": "Ar"
   }
 }

@@ -1,6 +1,42 @@
 {
   "translation": {
-    "Hello": "Hello",
-    "Lang": "En"
+    "bosta": "Bosta",
+    "main": "Main",
+    "prices": "Prices",
+    "support": "Support",
+    "trackpackage": "Track Package",
+    "login": "Login",
+    "lastupdate": "Last Update",
+    "delivered": "Delivered",
+    "packagedetails": "Package Details",
+    "date": "Date",
+    "time": "Time",
+    "promiseddate": "Promised Date",
+    "packagenumber": "Package Number {{num}}",
+    "provider": "Provider",
+    "details": "Details",
+    "address": "Address",
+    "branch": "Branch",
+    "Branch": {
+      "nasrcity": "Nasr City"
+    },
+    "PackageState": {
+      "TICKET_CREATED": "Ticket Created",
+      "PACKAGE_RECEIVED": "Package Received",
+      "OUT_FOR_DELIVERY": "Out For Delivery",
+      "DELIVERED": "Delivered",
+      "NOT_YET_SHIPPED": ""
+    },
+    "Days": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    },
+
+    "lang": "ENG"
   }
 }

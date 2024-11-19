@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .hero-subtit {
+    @apply text-[0.73rem] text-gray-400 font-[500];
+  }
+  .item-cont {
+    @apply min-w-[100%] flex-wrap md:min-w-[25%] mb-6 md:mb-0;
+  }
+  .table-item-start {
+    @apply border border-e-0 border-slate-200 py-4;
+  }
+  .table-item-center {
+    @apply border border-x-0 border-slate-200 py-4;
+  }
+  .table-item-end {
+    @apply border border-s-0 border-slate-200 py-4;
+  }
+}

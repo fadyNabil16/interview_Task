@@ -1,20 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    darkMode: ["class"],
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      cairo: ["Cairo", "sans"],
-    },
-    extend: {
-      colors: {
-        bgc: {
-          bgreen: "#36b500ff",
-          bred: "#f50004ff",
-          bgray: "#fafafaff",
-          byellow: "#fabc02ff",
-        },
-      },
-    },
+  	fontFamily: {
+  		cairo: ["Cairo", "sans"]
+  	},
+  	extend: {
+  		colors: {
+  			bgc: {
+  				bgreen: '#36b500ff',
+  				bred: '#f50004ff',
+  				bgray: '#fafafaff',
+  				byellow: '#fabc02ff',
+  				bdarkgray: '#edededff'
+  			}
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
