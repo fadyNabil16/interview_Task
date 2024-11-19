@@ -9,9 +9,9 @@ import { PackageContext, PackageProvider } from "./context/PackageProvider";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <LangProvider>
-      <PackageProvider>
+      {/* <PackageProvider> */}
         <App />
-      </PackageProvider>
+      {/* </PackageProvider> */}
     </LangProvider>
   </StrictMode>
 );

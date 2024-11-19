@@ -24,7 +24,13 @@
       "PACKAGE_RECEIVED": "تم إستلام الشحنة من التاجر",
       "OUT_FOR_DELIVERY": "الشحنة خرجت للتسليم",
       "DELIVERED": "تم التسليم",
-      "NOT_YET_SHIPPED": ""
+      "NOT_YET_SHIPPED": "لم يتم الشحن",
+      "IN_TRANSIT": "ترانسيت",
+      "DELIVERY_FAILED": "فشل التسليم",
+      "DELIVERED_TO_SENDER": "تم التسليم للتاجر",
+      "WAITING_FOR_CUSTOMER_ACTION": "بانتظار استلام العميل",
+      "CANCELLED": "تم الالغاء",
+      "AVAILABLE_FOR_PICKUP": "جاهز للتسليم يدويا"
     },
     "Days": {
       "sunday": "الاحد",
@@ -34,6 +40,16 @@
       "thursday": "الخميس",
       "friday": "الجمعة",
       "saturday": "السبت"
+    },
+    "Months": {
+    "1":"يناير",
+    "2":"فبراير",
+    "3":"مارس",
+    "4":"إبريل",
+    "5":"مايو",
+    "6":"يونيو",
+    "7":"يوليو",
+    "8":"اغسطس"
     },
     "devaddress": "امبابة شارع طلعت حرب مدينة العمال بجوار البرنس منزل 17 بلوك 22 , cairo",
     "lang": "Ar"

@@ -25,7 +25,13 @@
       "PACKAGE_RECEIVED": "Package Received",
       "OUT_FOR_DELIVERY": "Out For Delivery",
       "DELIVERED": "Delivered",
-      "NOT_YET_SHIPPED": ""
+      "NOT_YET_SHIPPED": "Not yet Shipped",
+      "IN_TRANSIT": "In Transit",
+      "DELIVERY_FAILED": "Delivery Failed",
+      "DELIVERED_TO_SENDER": "Delivered to sender",
+      "WAITING_FOR_CUSTOMER_ACTION": "Waiting for customer action",
+      "CANCELLED": "Cancelled",
+      "AVAILABLE_FOR_PICKUP": "Available For Pickup"
     },
     "Days": {
       "sunday": "Sunday",
@@ -36,7 +42,16 @@
       "friday": "Friday",
       "saturday": "Saturday"
     },
-
+"Months": {
+    "1":"January",
+    "2":"February",
+    "3":"March",
+    "4":"April",
+    "5":"May",
+    "6":"June",
+    "7":"July",
+    "8":"August"
+    },
     "lang": "ENG"
   }
 }

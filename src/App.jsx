@@ -1,9 +1,21 @@
-import { useContext, useState } from "react";
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { useLang } from "./context/LangProvider";
 import Navbar from "./components/Navbar/Navbar";
 import "./app.css";
 import { usePackInfo } from "./context/PackageProvider";
+import { dateParse } from "./Utility/helper";
+
+/* 
+{provider: 'Bosta', CurrentStatus: {…}, PromisedDate: '2024-05-21T20:59:59.999Z', TrackingNumber: '84043113', TrackingURL: 'bosta.co/tracking-shipment/?track_num=84043113', …}
+*/
+
 //{t('')}
 function App() {
   const {
@@ -12,15 +24,33 @@ function App() {
   } = useTranslation();
   const { lang, changeLang } = useLang();
 
-  const { getPackageData } = usePackInfo();
+  // const { data, isLoading, error } = usePackInfo();
+  const [color, setColor] = useState("bg-bgc-bred");
+  const [progress, setProgress] = useState({
+    state: "",
+    percent: "",
+    color: "",
+  });
+  const [res, setRes] = useState({
+    state: {
+      CANCELLED: "bg-bgc-bred",
+      WAITING_FOR_CUSTOMER_ACTION: "bg-bgc-byellow",
+      DELIVERED: "bg-bgc-bgreen",
+    },
+  });
+  useEffect(() => {}, []);
+
   const handleChangeLanguage = (deslang) => {
     changeLang(deslang);
     changeLanguage(deslang);
   };
 
-  const handlehh = () => {
-    getPackageData();
-  };
+  // if(isLoading) {
+  //   return <div>Loading...</div>
+  // }
+  // if(error) {
+  //   return <div>{error.message}</div>
+  // }
 
   return (
     <div className="font-cairo">
@@ -33,7 +63,7 @@ function App() {
               <div className="hero-subtit">
                 {t("packagenumber", { num: 123 })}
               </div>
-              <div>{t("PackageState.TICKET_CREATED")}</div>
+              <div>{t(`PackageState.aasds`)}</div>
             </div>
             <div className="item-cont">
               <div className="hero-subtit">{t("lastupdate")}</div>
@@ -45,20 +75,38 @@ function App() {
             </div>
             <div className="item-cont">
               <div className="hero-subtit">{t("promiseddate")}</div>
-              <div>ِ3يناير</div>
+              <div>ِ{t(`fady`)}</div>
             </div>
           </div>
           {/* SLider */}
-          <div className="relative py-12 px-7">
-            <div className="h-[0.4rem] min-w-full bg-slate-500 rounded-full" />
-            {
-              <div className="absolute text-xl top-[46%] right-9 z-20 ">
-                <i class="fa-solid fa-boxes-packing "></i>
+          <div className="m-12">
+            <div className="relative">
+              <div className="absolute h-[0.4rem] min-w-full bg-gray-500 rounded-full">
+                <div
+                  className={`h-[0.4rem] w-[33%] ${color} rounded-full`}
+                ></div>
               </div>
-            }
-            <button onClick={() => handlehh()} className="left-0 absolute">
-              adasd
-            </button>
+              <div
+                className={`absolute start-0 border rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
+              >
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div
+                className={`absolute start-1/3 border rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
+              >
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div
+                className={`absolute start-2/3 border rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
+              >
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div
+                className={`absolute end-0 border rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
+              >
+                <i class="fa-solid fa-boxes-packing"></i>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -79,14 +127,14 @@ function App() {
                   </tr>
                 </thead>
                 <tbody className="text-center">
-                  {[1, 2, 3, 4].map((item, idx) => (
+                  {/* {data.TransitEvents.map((item, idx) => (
                     <tr key={idx} className="py-20">
                       <td className="table-item-start">{t("branch")}</td>
                       <td className="table-item-center">{t("date")}</td>
-                      <td className="table-item-center">{t("time")}</td>
-                      <td className="table-item-end">{t("details")}</td>
+                      <td className="table-item-center">{t("12:30 pm")}</td>
+                      <td className="table-item-end">{t(`PackageState.${item.state}`)}</td>
                     </tr>
-                  ))}
+                  ))} */}
                 </tbody>
               </table>
             </div>
