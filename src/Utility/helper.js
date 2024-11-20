@@ -8,8 +8,7 @@ export const dateParse = (_date) => {
 
 export const TimeParse = (_date) => {
     const date = new Date(_date);
-    // const time = date.getHours + ":" + date.getMinutes
-    // return time
+
 };
 
 
