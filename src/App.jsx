@@ -74,39 +74,6 @@ function App() {
           </div>
           {/* SLider */}
           <div className="px-12 py-12">
-            {/* <div className="relative">
-              <div className="absolute h-[0.4rem] min-w-[100%] bg-[#edededff] rounded-full">
-                <div
-                  className={`h-[0.4rem] ${
-                    perscent === 33
-                      ? "w-[34%]"
-                      : perscent === 66
-                      ? "w-[67%]"
-                      : "w-[100%]"
-                  } ${color} rounded-full`}
-                ></div>
-              </div>
-              <div
-                className={`absolute start-0 -bottom-[25px] border rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
-              >
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
-              <div
-                className={`absolute start-1/3 border -bottom-[25px] rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
-              >
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
-              <div
-                className={`absolute start-2/3 border -bottom-[25px] rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
-              >
-                <i class="fa-solid fa-truck-fast"></i>
-              </div>
-              <div
-                className={`absolute end-0 border -bottom-[25px] rounded-full text-[#fff] ${color} p-3 text-[0.9rem]`}
-              >
-                <i class="fa-solid fa-boxes-packing"></i>
-              </div>
-            </div> */}
             <CustomProgressBar currentStage={perscent} color={color} />
           </div>
           <div className="px-12 flex justify-between font-bold text-[0.9rem] pb-10">
