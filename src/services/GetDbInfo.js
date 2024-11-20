@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const dbInfo = async (api) => {
+export const dbInfo = async (api, trackNumber = "40106705") => {
   try {
-    const res = await axios.get(api + "40106705", {
+    const res = await axios.get(api + trackNumber, {
       headers: {
         "Content-Type": "application/json",
       },

@@ -12,6 +12,7 @@ import "./app.css";
 import question from "./assets/question.jpg";
 import { usePackInfo } from "./context/PackageProvider";
 import { dateParse } from "./Utility/helper";
+import CustomProgressBar from "./components/ProgressBar/ProgressBar";
 
 /* 
 {provider: 'Bosta', CurrentStatus: {…}, PromisedDate: '2024-05-21T20:59:59.999Z', TrackingNumber: '84043113', TrackingURL: 'bosta.co/tracking-shipment/?track_num=84043113', …}
@@ -31,7 +32,8 @@ function App() {
   } = useTranslation();
   const { lang, changeLang } = useLang();
 
-  const { data, isLoading, error, perscent, color, tarns } = usePackInfo();
+  const { data, isLoading, error, perscent, color, tarns, currentState } =
+    usePackInfo();
   const [reason, setReason] = useState("");
   const [progress, setProgress] = useState();
 
@@ -53,7 +55,9 @@ function App() {
               <div className="hero-subtit">
                 {t("packagenumber", { num: 123 })}
               </div>
-              <div>{t(`PackageState.DELIVERED`)}</div>
+              <div style={{ color: `${color}` }} className={`font-bold`}>
+                {t(`${currentState}`)}
+              </div>
             </div>
             <div className="item-cont">
               <div className="hero-subtit">{t("lastupdate")}</div>
@@ -70,7 +74,7 @@ function App() {
           </div>
           {/* SLider */}
           <div className="px-12 py-12">
-            <div className="relative">
+            {/* <div className="relative">
               <div className="absolute h-[0.4rem] min-w-[100%] bg-[#edededff] rounded-full">
                 <div
                   className={`h-[0.4rem] ${
@@ -102,25 +106,26 @@ function App() {
               >
                 <i class="fa-solid fa-boxes-packing"></i>
               </div>
-            </div>
+            </div> */}
+            <CustomProgressBar currentStage={perscent} color={color} />
           </div>
           <div className="px-12 flex justify-between font-bold text-[0.9rem] pb-10">
-            <div>{t("PackageState.TICKET_CREATED")}</div>
-            <div>{t("PackageState.PACKAGE_RECEIVED")}</div>
-            <div>{t("PackageState.OUT_FOR_DELIVERY")}</div>
-            <div>{t("PackageState.DELIVERED")}</div>
+            <div>{t("TICKET_CREATED")}</div>
+            <div>{t("PACKAGE_RECEIVED")}</div>
+            <div>{t("OUT_FOR_DELIVERY")}</div>
+            <div>{t("DELIVERED")}</div>
           </div>
         </div>
 
         {/* Third section */}
-        <div className="grid grid-cols-12 md:gap-4">
+        <div className="grid grid-cols-12 md:gap-4 mb-10">
           <div className="col-span-12 md:col-span-8">
             <div className="mb-4">
               <p>{t("packagedetails")}</p>
             </div>
-            <div>
-              <table className="border-collapse min-w-full text-[0.75rem]  overflow-visible">
-                <thead className="bg-gray-50 text-gray-400/95 font-bold">
+            <div className="rounded-lg overflow-hidden border border-gray-200">
+              <table className="border-collapse min-w-full text-[0.85rem]">
+                <thead className="bg-gray-50 text-gray-400/95 font-semibold">
                   <tr className="py-4">
                     <th className="table-item-start">{t("branch")}</th>
                     <th className="table-item-center">{t("date")}</th>
@@ -128,17 +133,15 @@ function App() {
                     <th className="table-item-end">{t("details")}</th>
                   </tr>
                 </thead>
-                <tbody className="text-center">
+                <tbody className="text-center font-normal">
                   {tarns.map((item, idx) => (
                     <tr key={idx} className="py-20">
                       <td className="table-item-start">
                         {t("Branch.nasrcity")}
                       </td>
-                      <td className="table-item-center">{t("date")}</td>
+                      <td className="table-item-center">05/05/2020</td>
                       <td className="table-item-center">{t("12:30 pm")}</td>
-                      <td className="table-item-end">
-                        {t(`PackageState.${item.state}`)}
-                      </td>
+                      <td className="table-item-end">{t(`${item.state}`)}</td>
                     </tr>
                   ))}
                 </tbody>

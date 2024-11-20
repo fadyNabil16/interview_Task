@@ -2,12 +2,13 @@ import { dbInfo } from "@/services/GetDbInfo";
 import axios from "axios";
 import React, { useState, createContext, useLayoutEffect } from "react";
 
-export const PackageContext = createContext({});
+export const PackageContext = createContext();
 
 export const PackageProvider = ({ children }) => {
   const api = "https://tracking.bosta.co/shipments/track/";
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
+  const [currentState, setCurrentState] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [perscent, setPercent] = React.useState(0);
   const [color, setColor] = React.useState("");
@@ -17,26 +18,24 @@ export const PackageProvider = ({ children }) => {
     fetchdata();
   }, []);
 
-  const fetchdata = async () => {
+  const fetchdata = async (trackNumber = "40106705") => {
     setIsLoading(true);
     try {
-      const response = await dbInfo(api);
-      const data = response;
-      setData(data);
-      console.log(data.CurrentStatus);
-
-      const perscent = ppp(data.CurrentStatus);
-      console.log(perscent);
-      setPercent(perscent);
-      console.log(perscent);
-      if (perscent == 100) {
-        setColor("bg-bgc-bgreen");
-      } else if (perscent == 66) {
-        setColor("bg-bgc-bred");
-      } else {
-        setColor("bg-bgc-byellow");
-      }
-      setTrans(data.TransitEvents);
+      await dbInfo(api, trackNumber).then((response) => {
+        const data = response;
+        setData(data);
+        setCurrentState(data.CurrentStatus.state);
+        const perscent = ppp(data.CurrentStatus);
+        setPercent(perscent);
+        const color =
+          perscent > 3
+            ? "bg-bgc-bgreen"
+            : perscent > 2
+            ? "bg-bgc-bred"
+            : "bg-bgc-byellow";
+        setColor(color);
+        setTrans(data.TransitEvents);
+      });
     } catch (error) {
       setError(error);
     } finally {
@@ -45,9 +44,9 @@ export const PackageProvider = ({ children }) => {
   };
 
   const ppp = (arr) => {
-    let x = 0;
+    let x = 1;
     if (arr.state == "PACKAGE_RECEIVED") {
-      x = 33;
+      x = 2;
     } else if (
       arr.state === "OUT_FOR_DELIVERY" ||
       arr.state === "WAITING_FOR_CUSTOMER_ACTION" ||
@@ -56,14 +55,27 @@ export const PackageProvider = ({ children }) => {
       arr.state === "CANCELLED" ||
       arr.state === "DELIVERED_TO_SENDER"
     ) {
-      x = 66;
+      x = 3;
     } else if (arr.state === "DELIVERED") {
-      x = 100;
+      x = 4;
     }
     return x;
   };
 
-  const value = { data, isLoading, error, perscent, color, tarns };
+  const NewPaclageTrack = (num) => {
+    fetchdata(num);
+  };
+
+  const value = {
+    data,
+    isLoading,
+    error,
+    perscent,
+    color,
+    tarns,
+    currentState,
+    NewPaclageTrack,
+  };
 
   return (
     <PackageContext.Provider value={value}>{children}</PackageContext.Provider>

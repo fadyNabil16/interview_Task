@@ -2,6 +2,6 @@
 
 @layer components {
   ._container {
-    @apply flex justify-between items-center font-cairo text-sm font-extrabold px-12 py-4 border-b border-[#f7f7f7];
+    @apply flex justify-between items-center md:items-baseline font-cairo text-sm font-extrabold px-12 py-4 border-b border-[#f7f7f7];
   }
 }

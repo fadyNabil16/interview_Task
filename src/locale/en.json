@@ -20,19 +20,19 @@
     "Branch": {
       "nasrcity": "Nasr City"
     },
-    "PackageState": {
-      "TICKET_CREATED": "Ticket Created",
-      "PACKAGE_RECEIVED": "Package Received",
-      "OUT_FOR_DELIVERY": "Out For Delivery",
-      "DELIVERED": "Delivered",
-      "NOT_YET_SHIPPED": "Not yet Shipped",
-      "IN_TRANSIT": "In Transit",
-      "DELIVERY_FAILED": "Delivery Failed",
-      "DELIVERED_TO_SENDER": "Delivered to sender",
-      "WAITING_FOR_CUSTOMER_ACTION": "Waiting for customer action",
-      "CANCELLED": "Cancelled",
-      "AVAILABLE_FOR_PICKUP": "Available For Pickup"
-    },
+
+    "TICKET_CREATED": "Ticket Created",
+    "PACKAGE_RECEIVED": "Package Received",
+    "OUT_FOR_DELIVERY": "Out For Delivery",
+    "DELIVERED": "Delivered",
+    "NOT_YET_SHIPPED": "Not yet Shipped",
+    "IN_TRANSIT": "In Transit",
+    "DELIVERY_FAILED": "Delivery Failed",
+    "DELIVERED_TO_SENDER": "Delivered to sender",
+    "WAITING_FOR_CUSTOMER_ACTION": "Waiting for customer action",
+    "CANCELLED": "Cancelled",
+    "AVAILABLE_FOR_PICKUP": "Available For Pickup",
+
     "Days": {
       "sunday": "Sunday",
       "monday": "Monday",
@@ -42,19 +42,22 @@
       "friday": "Friday",
       "saturday": "Saturday"
     },
-"Months": {
-    "1":"January",
-    "2":"February",
-    "3":"March",
-    "4":"April",
-    "5":"May",
-    "6":"June",
-    "7":"July",
-    "8":"August"
+    "Months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August"
     },
-    "consttime":"3 January 2020",
+    "consttime": "3 January 2020",
+    "devaddress": "8 street Mohamed Gamal Imbaba Behiand Qasr El kabagy, Imbab, Cairo",
     "reportAProblem1": "There is Any PRoblem?",
     "reportAProblem2": "report problem",
-    "lang": "ENG"
+    "packagenum": "Package Number",
+    "lang": "Ar",
+    "follow": "Follow"
   }
 }
