@@ -43,29 +43,31 @@ const Navbar = () => {
         <div className="flex text-bgc-bred text-xl">{t("bosta")}</div>
 
         <div className="hidden md:block">
-          <ul className="flex">
-            <li className="px-12">{t("main")}</li>
-            <li className="px-12">{t("prices")}</li>
-            <li className="px-12">{t("support")}</li>
+          <ul className="flex text-[0.7rem] md:text-[0.95rem] lg:text-[1.05rem]">
+            <li className="px-5 lg:px-12">{t("main")}</li>
+            <li className="px-5 lg:px-12">{t("prices")}</li>
+            <li className="px-5 lg:px-12">{t("support")}</li>
           </ul>
         </div>
 
         <div className="hidden md:block">
-          <ul className="flex items-baseline">
+          <ul className="flex items-baseline text-[0.7rem] md:text-[0.95rem] lg:text-[1.05rem]">
             <li className="relative px-5 pt-5 md:hover:text-bgc-bred md:hover:border md:hover:border-b-0 md:hover:border-b-gray-400 md:hover:rounded-t-lg">
-              <button onClick={toggleFollow}>{t("trackpackage")}</button>
+              <button onClick={toggleFollow} className="">
+                {t("trackpackage")}
+              </button>
               <div
                 className={`absolute start-0 mt-2 w-80 gap-1 bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
                   isFollowOpen ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <form onSubmit={handleSubmit} className="p-4 flex">
+                <form onSubmit={handleSubmit} className="p-4 flex gap-1">
                   <input
                     type="text"
-                    placeholder="تتبع شحنتك"
+                    placeholder={t("packagenum")}
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
-                    className="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="text-gray-400 flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                   <button

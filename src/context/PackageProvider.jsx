@@ -18,14 +18,17 @@ export const PackageProvider = ({ children }) => {
     fetchdata();
   }, []);
 
-  const fetchdata = async (trackNumber = "40106705") => {
+  const fetchdata = async (trackNumber = "84043113") => {
     setIsLoading(true);
     try {
       await dbInfo(api, trackNumber).then((response) => {
         const data = response;
+        console.log(data);
         setData(data);
         setCurrentState(data.CurrentStatus.state);
         const perscent = ppp(data.CurrentStatus);
+        console.log(perscent);
+
         setPercent(perscent);
         const color =
           perscent > 3
@@ -33,6 +36,8 @@ export const PackageProvider = ({ children }) => {
             : perscent > 2
             ? "bgc-bred"
             : "bgc-byellow";
+        console.log(color);
+
         setColor(color);
         setTrans(data.TransitEvents);
       });
