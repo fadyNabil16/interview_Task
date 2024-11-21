@@ -54,7 +54,7 @@ function App() {
               <div className="hero-subtit">
                 {t("packagenumber", { num: 123 })}
               </div>
-              <div style={{ color: `${color}` }} className={`font-bold`}>
+              <div className={`font-bold text-bgc-bred`}>
                 {t(`${currentState}`)}
               </div>
             </div>
@@ -75,7 +75,7 @@ function App() {
           <div className="px-12 py-12">
             <CustomProgressBar currentStage={perscent} color={color} />
           </div>
-          <div className="px-12 flex justify-between font-bold text-[0.9rem] pb-10">
+          <div className="px-12 flex justify-between font-bold text-[0.7rem] md:text-[0.85rem] lg:text-[0.9rem] pb-10">
             <div>{t("TICKET_CREATED")}</div>
             <div>{t("PACKAGE_RECEIVED")}</div>
             <div>{t("OUT_FOR_DELIVERY")}</div>

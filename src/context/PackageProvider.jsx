@@ -29,10 +29,10 @@ export const PackageProvider = ({ children }) => {
         setPercent(perscent);
         const color =
           perscent > 3
-            ? "bg-bgc-bgreen"
+            ? "bgc-bgreen"
             : perscent > 2
-            ? "bg-bgc-bred"
-            : "bg-bgc-byellow";
+            ? "bgc-bred"
+            : "bgc-byellow";
         setColor(color);
         setTrans(data.TransitEvents);
       });

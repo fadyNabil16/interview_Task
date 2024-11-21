@@ -99,20 +99,20 @@ const Navbar = () => {
 
       {/* Mobile navbar */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-200">
+        <div className="md:hidden border-t border-gray-200 px-4">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <ul className="w-full space-y-6">
-              <li className="px-12">{t("main")}</li>
-              <li className="px-12">{t("prices")}</li>
-              <li className="px-12">{t("support")}</li>
+              <li className="">{t("main")}</li>
+              <li className="">{t("prices")}</li>
+              <li className="">{t("support")}</li>
             </ul>
-            <div className="text-start w-full px-2">
+            <div className="text-start w-full">
               <ul className="flex flex-col items-baseline w-full space-y-6">
-                <li className="px-5 pt-5 w-full">
+                <li className="pt-5 w-full">
                   <div className="relative">
                     <button
                       onClick={toggleFollow}
-                      className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md w-full text-left flex justify-between items-center"
+                      className="text-gray-700 hover:bg-gray-100 block py-2 rounded-md w-full text-left flex justify-between items-center"
                     >
                       {t("trackpackage")}
                       {isFollowOpen ? (
@@ -128,10 +128,7 @@ const Navbar = () => {
                           : "max-h-0 opacity-0"
                       }`}
                     >
-                      <form
-                        onSubmit={handleSubmit}
-                        className="p-4 flex flex-row-reverse gap-1"
-                      >
+                      <form onSubmit={handleSubmit} className="p-4 flex gap-1">
                         <input
                           type="text"
                           placeholder={t("packagenum")}
@@ -141,16 +138,16 @@ const Navbar = () => {
                         />
                         <button
                           type="submit"
-                          className="bg-red-600 text-white px-4 py-2 rounded-r-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                         >
-                          Submit
+                          {t("follow")}
                         </button>
                       </form>
                     </div>
                   </div>
                 </li>
-                <li className="px-5 w-full">{t("login")}</li>
-                <li className="text-bgc-bred px-5">
+                <li className="w-full">{t("login")}</li>
+                <li className="text-bgc-bred">
                   <button onClick={handleLang}>{t("lang")}</button>
                 </li>
               </ul>
