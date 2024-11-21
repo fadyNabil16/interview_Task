@@ -11,7 +11,6 @@ import Navbar from "./components/Navbar/Navbar";
 import "./app.css";
 import question from "./assets/question.jpg";
 import { usePackInfo } from "./context/PackageProvider";
-import { dateParse } from "./Utility/helper";
 import CustomProgressBar from "./components/ProgressBar/ProgressBar";
 
 /* 
