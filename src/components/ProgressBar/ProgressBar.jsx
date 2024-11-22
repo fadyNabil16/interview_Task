@@ -41,19 +41,33 @@ export default function CustomProgressBar({
               )}`}
             >
               <div
-                className={`flex items-center justify-center rounded-full ${
+                className={`rounded-full ${
                   isCompleted(index) ? `bg-${color}` : "bg-gray-100"
                 }`}
               >
                 {isCompleted(index) ? (
-                  <div className="w-5 h-5 flex items-center justify-center">
-                    <Check className="w-3 h-3 text-white" />
+                  <div>
+                    {index + 1 === currentStage ? (
+                      <div className="w-9 h-9 flex justify-center items-center">
+                        <div
+                          className={`w-[60%] h-[60%] ${
+                            currentStage > index ? "text-white" : "bg-gray-100"
+                          }`}
+                        >
+                          <i class={stage.icon}></i>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="w-5 h-5 flex items-center justify-center">
+                        <Check className="w-3 h-3 text-white" />
+                      </div>
+                    )}
                   </div>
                 ) : (
-                  <div className="w-9 h-9 relative">
+                  <div className="w-9 h-9 flex justify-center items-center">
                     <div
-                      className={`w-[60%] h-[60%] absolute start-[25%] top-[12%] ${
-                        currentStage > index ? "text-white" : "bg-bg-gray-100"
+                      className={`w-[60%] h-[60%] ${
+                        currentStage > index ? "text-white" : "bg-gray-100"
                       }`}
                     >
                       <i class={stage.icon}></i>
