@@ -8,7 +8,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useLang } from "./context/LangProvider";
 import Navbar from "./components/Navbar/Navbar";
-import "./app.css";
+import "./App.css";
 import question from "./assets/question.jpg";
 import { usePackInfo } from "./context/PackageProvider";
 import CustomProgressBar from "./components/ProgressBar/ProgressBar";
